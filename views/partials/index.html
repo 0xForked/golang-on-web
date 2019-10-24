@@ -1,0 +1,13 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ .title }}</title>
+        {{template  "_header"}}
+    </head>
+    <body>
+        <p>{{ .message }}</p>
+        {{template "_footer"}}
+    </body>
+</html>
+{{end}}

@@ -1,0 +1,41 @@
+<html lang="en">
+
+    <head>
+        <title>Action And Variable</title>
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+
+    <body>
+        <tr>
+            {{/* example how to use actions */}}
+            <td>{{"Name"}}</td>
+            <td>: {{.Name}}</td>
+        </tr>
+        <br>
+        <tr>
+            {{/* example variable on view*/}}
+            <td>Gender</td>
+            {{$gender := .Gender}}
+            <td style="text-transform: capitalize;">:
+                {{$gender}}
+            </td>
+        </tr>
+        <br>
+        <tr>
+            {{/* example range/looping */}}
+            <td>Hobbies</td>
+            <td>:
+                {{range $index, $elem := .Hobbies}}
+                    {{$elem}},
+                {{end}}
+            </td>
+        </tr>
+        <br>
+        <tr>
+            {{/* access property on object variable*/}}
+            <td>Affiliation</td>
+            <td>: {{.Info.Affiliation}} ({{.Info.GetAffiliationDetailInfo}}) {{/*access method*/}}</td>
+        </tr>
+    </body>
+
+</html>
